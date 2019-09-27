@@ -1,0 +1,30 @@
+{
+ "sap.app" :{
+      "id" : "com.smax.batch39"
+ },
+ "sap.ui5" : {
+ 		"rootView" : "com.smax.batch39.view.App",
+		"routing" : {
+			"config" : {
+				"viewType" : "XML",
+				"viewPath" : "com.smax.batch39.view",
+				"routerClass" : "sap.m.routing.Router",
+				"controlId" : "idApp",
+	        	"controlAggregation" : "pages"
+			},
+			"routes" : [
+			          {
+			        	"pattern" : "",
+			        	"name" : "FirstPage",
+			        	"viewName" : "Page1"			        	
+			          },
+			          {
+				        	"pattern" : "toPage2",
+				        	"name" : "SecondPage",
+				        	"viewName" : "Page2"				        	
+				          }
+			          ]
+		}
+ 
+ }
+}

@@ -1,12 +1,6 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		 xmlns:html="http://www.w3.org/1999/xhtml">
-	<App id="idApp">
-	  
-	   
-	   <!--  <mvc:XMLView viewName="com.smax.batch39.view.Page1"/>
-	    <mvc:XMLView viewName="com.smax.batch39.view.Page2"/> -->
-	      
-	       
-	  
+	<App id="idApp">	  
+	
 	</App>
 </core:View>
