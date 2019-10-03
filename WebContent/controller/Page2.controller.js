@@ -1,13 +1,22 @@
-sap.ui.controller("com.smax.batch39.controller.Page1", {
+sap.ui.controller("com.smax.batch39.controller.Page2", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf view.Page1
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+	//	debugger;
+		oRouter = this.getOwnerComponent().getRouter();
+		
+		oRouter.getRoute("SecondPage").attachPatternMatched(function(oEvent){
+			
+			var custID = oEvent.mParameters.arguments.custID;
+			
+			this.getView().bindElement("/Customers('"+custID+"')");
+			
+		},this);
+	},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
@@ -34,18 +43,7 @@ sap.ui.controller("com.smax.batch39.controller.Page1", {
 //	onExit: function() {
 //
 //	}
-	/*onPressBtntoPage2 : function(oEvent){
-		//Navigate to page 2
-		var oRouter = this.getOwnerComponent().getRouter();
-		oRouter.navTo("SecondPage", { custID : });
-	}*/
-	onItemPress : function(oEvent){
-		var customerID = "";
-		
-		customerID = oEvent.getSource().getTitle();
-		
-		this.getOwnerComponent().getRouter().navTo("SecondPage", {custID : customerID});
-	}
+	
 
 });
 

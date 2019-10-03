@@ -1,9 +1,19 @@
 {
  "sap.app" :{
-      "id" : "com.smax.batch39"
+      "id" : "com.smax.batch39",
+      "dataSources" : {
+            "smaxService" : {
+               "uri" : "proxy/https/services.odata.org/V2/Northwind/Northwind.svc/"
+            }
+      }
  },
  "sap.ui5" : {
  		"rootView" : "com.smax.batch39.view.App",
+ 		"models" : {
+ 		    "" : {
+ 		      "dataSource" : "smaxService"
+ 		    }
+ 		},
 		"routing" : {
 			"config" : {
 				"viewType" : "XML",
@@ -19,7 +29,7 @@
 			        	"viewName" : "Page1"			        	
 			          },
 			          {
-				        	"pattern" : "toPage2",
+				        	"pattern" : "toPage2/{custID}",
 				        	"name" : "SecondPage",
 				        	"viewName" : "Page2"				        	
 				          }
